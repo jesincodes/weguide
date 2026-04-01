@@ -21,7 +21,7 @@
           <li><a href="#about">How We Work</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#colleges">Colleges</a></li>
-          <li><a href="#quiz">Career Quiz</a></li>
+          <li><a href="#explore">Explore</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -39,8 +39,9 @@
             </p>
             <div class="hero-actions">
               <a class="btn" href="#contact">Book Free Counseling</a>
+              <a class="btn" href="#explore">Find College</a>
               <a
-                class="btn btn-secondary"
+                class="btn"
                 href="https://wa.me/9496095055?text=Hi%20I%20need%20admission%20guidance"
                 target="_blank"
                 rel="noopener"
@@ -104,40 +105,11 @@
       <section id="colleges" class="section">
         <div class="container">
           <h3>Colleges We Work With</h3>
-          <div class="college-grid">
-            <article class="card">
-              <h4>Greenfield Engineering College</h4>
-              <p>
-                Known for Computer Science, Mechanical Engineering, and strong
-                placement support.
-              </p>
-            </article>
-            <article class="card">
-              <h4>Summit Business School</h4>
-              <p>
-                Offers BBA, MBA, and entrepreneurship programs with industry
-                mentorship.
-              </p>
-            </article>
-            <article class="card">
-              <h4>Riverdale Medical Institute</h4>
-              <p>
-                Provides top-tier healthcare education with modern labs and
-                hospital training.
-              </p>
-            </article>
-            <article class="card">
-              <h4>City Arts and Science College</h4>
-              <p>
-                Popular for science, humanities, and commerce programs with
-                research opportunities.
-              </p>
-            </article>
-          </div>
+          <div id="featuredCollegesGrid" class="college-grid"></div>
         </div>
       </section>
 
-      <section class="section section-alt">
+      <section id="explore" class="section section-alt">
         <div class="container">
           <h3>Explore Colleges</h3>
           <p>
@@ -159,42 +131,6 @@
           </p>
           <div class="show-more-wrap">
             <button id="showMoreBtn" class="btn btn-show-more" type="button">Show More</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="quiz" class="section container">
-        <h3>College & Course Recommendation Quiz</h3>
-        <p>Answer a few questions to get smart course and college recommendations.</p>
-
-        <div class="quiz-shell">
-          <div class="quiz-progress">
-            <div id="quizProgressBar" class="quiz-progress-bar"></div>
-          </div>
-          <p id="quizProgressText" class="quiz-progress-text">Question 1</p>
-
-          <div id="quizQuestionCard" class="quiz-card">
-            <h4 id="quizQuestionText">Loading question...</h4>
-            <div id="quizOptions" class="quiz-options"></div>
-            <div class="quiz-actions">
-              <button id="quizNextBtn" class="btn" type="button" disabled>Next Question</button>
-            </div>
-          </div>
-
-          <div id="quizResultCard" class="quiz-result" hidden>
-            <h4 id="recommendedCourseTitle">Recommended Course Path</h4>
-            <p id="recommendedCourseList"></p>
-            <div class="result-grid">
-              <div>
-                <h5>Top 5 Colleges</h5>
-                <ol id="recommendedCollegeList"></ol>
-              </div>
-              <div>
-                <h5>Category Match (%)</h5>
-                <canvas id="categoryChart" width="320" height="320"></canvas>
-              </div>
-            </div>
-            <button id="quizRestartBtn" class="btn btn-secondary" type="button">Restart Quiz</button>
           </div>
         </div>
       </section>
@@ -227,12 +163,22 @@
               </a>
             </p>
           </div>
-          <form id="contactForm" class="contact-form">
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://formsubmit.co/nextstepvision.edu@gmail.com"
+            method="POST"
+          >
+            <!-- FormSubmit: delivers submissions to the email above (confirm once in inbox on first use) -->
+            <input type="hidden" name="_subject" value="WE GUIDE website — new contact message" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_gotcha" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" required />
+            <input id="name" name="name" type="text" required autocomplete="name" />
 
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
+            <input id="email" name="email" type="email" required autocomplete="email" />
 
             <label for="message">Message</label>
             <textarea
@@ -241,9 +187,10 @@
               rows="4"
               placeholder="Tell us which course or college you are interested in"
               required
+              autocomplete="off"
             ></textarea>
 
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit" class="btn" id="contactSubmitBtn">Send Message</button>
             <p id="formStatus" class="form-status" aria-live="polite"></p>
           </form>
         </div>
@@ -285,8 +232,6 @@
       </svg>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="colleges.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
