@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WE GUIDE Education Consultancy</title>
+    <meta
+      name="description"
+      content="WE GUIDE Education Consultancy helps students find and apply to top colleges."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="brand" href="#top" aria-label="WE GUIDE home">
+          <img src="assets/weguide-logo.png" alt="WE GUIDE logo" class="brand-logo" />
+          <span class="logo">WE GUIDE Education Consultancy</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#about">How We Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#colleges">Colleges</a></li>
+          <li><a href="#quiz">Career Quiz</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <p class="tag">Your Dream • Our Guidance • Your Success</p>
+            <h2>Professional admission guidance for a confident future</h2>
+            <p>
+              We help students shortlist the right colleges, prepare complete
+              applications, and secure admissions with clear end-to-end support.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Book Free Counseling</a>
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/9496095055?text=Hi%20I%20need%20admission%20guidance"
+                target="_blank"
+                rel="noopener"
+                >Chat on WhatsApp</a
+              >
+            </div>
+          </div>
+          <div class="hero-card">
+            <img src="assets/weguide-logo.png" alt="WE GUIDE profile logo" />
+            <h3>WE GUIDE Education Consultancy</h3>
+            <p>Trusted support for college admissions, counseling, and career planning.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section container">
+        <h3>How We Work</h3>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span>01</span>
+            <h4>Free Consultation</h4>
+            <p>Understand student goals and preferred course options.</p>
+          </article>
+          <article class="step-card">
+            <span>02</span>
+            <h4>College Selection</h4>
+            <p>Suggest best-fit colleges with transparent guidance.</p>
+          </article>
+          <article class="step-card">
+            <span>03</span>
+            <h4>Application & Admission</h4>
+            <p>Prepare applications and track progress to final admission.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="services" class="section section-alt">
+        <div class="container">
+          <h3>Our Services</h3>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h4>Career & Course Counseling</h4>
+              <p>One-on-one counseling to choose the right course based on goals and strengths.</p>
+            </article>
+            <article class="feature-card">
+              <h4>College Shortlisting</h4>
+              <p>Smart shortlisting of colleges by budget, location, ranking, and placement support.</p>
+            </article>
+            <article class="feature-card">
+              <h4>Application Assistance</h4>
+              <p>Complete support for forms, documents, and submission without missing deadlines.</p>
+            </article>
+            <article class="feature-card">
+              <h4>Admission Follow-up</h4>
+              <p>Regular follow-up with colleges until final admission confirmation is received.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="colleges" class="section">
+        <div class="container">
+          <h3>Colleges We Work With</h3>
+          <div class="college-grid">
+            <article class="card">
+              <h4>Greenfield Engineering College</h4>
+              <p>
+                Known for Computer Science, Mechanical Engineering, and strong
+                placement support.
+              </p>
+            </article>
+            <article class="card">
+              <h4>Summit Business School</h4>
+              <p>
+                Offers BBA, MBA, and entrepreneurship programs with industry
+                mentorship.
+              </p>
+            </article>
+            <article class="card">
+              <h4>Riverdale Medical Institute</h4>
+              <p>
+                Provides top-tier healthcare education with modern labs and
+                hospital training.
+              </p>
+            </article>
+            <article class="card">
+              <h4>City Arts and Science College</h4>
+              <p>
+                Popular for science, humanities, and commerce programs with
+                research opportunities.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <h3>Explore Colleges</h3>
+          <p>
+            Search by college name and optionally filter by city. If you do not
+            choose a city, all colleges are shown.
+          </p>
+          <div class="search-row search-controls">
+            <input id="collegeSearchInput" type="text" placeholder="Search college by name..." />
+            <select id="cityFilterSelect" aria-label="Filter by city">
+              <option value="">All Cities (Optional)</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Mysore">Mysore</option>
+              <option value="Mangalore">Mangalore</option>
+            </select>
+          </div>
+          <div id="exploreGrid" class="explore-grid"></div>
+          <p id="searchEmptyState" class="search-empty" hidden>
+            No colleges found. Try another name or location.
+          </p>
+          <div class="show-more-wrap">
+            <button id="showMoreBtn" class="btn btn-show-more" type="button">Show More</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="section container">
+        <h3>College & Course Recommendation Quiz</h3>
+        <p>Answer a few questions to get smart course and college recommendations.</p>
+
+        <div class="quiz-shell">
+          <div class="quiz-progress">
+            <div id="quizProgressBar" class="quiz-progress-bar"></div>
+          </div>
+          <p id="quizProgressText" class="quiz-progress-text">Question 1</p>
+
+          <div id="quizQuestionCard" class="quiz-card">
+            <h4 id="quizQuestionText">Loading question...</h4>
+            <div id="quizOptions" class="quiz-options"></div>
+            <div class="quiz-actions">
+              <button id="quizNextBtn" class="btn" type="button" disabled>Next Question</button>
+            </div>
+          </div>
+
+          <div id="quizResultCard" class="quiz-result" hidden>
+            <h4 id="recommendedCourseTitle">Recommended Course Path</h4>
+            <p id="recommendedCourseList"></p>
+            <div class="result-grid">
+              <div>
+                <h5>Top 5 Colleges</h5>
+                <ol id="recommendedCollegeList"></ol>
+              </div>
+              <div>
+                <h5>Category Match (%)</h5>
+                <canvas id="categoryChart" width="320" height="320"></canvas>
+              </div>
+            </div>
+            <button id="quizRestartBtn" class="btn btn-secondary" type="button">Restart Quiz</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section container">
+        <h3>Contact Us</h3>
+        <p>
+          Reach out to discuss your admission goals. Our team will respond
+          within 24 hours.
+        </p>
+        <div class="contact-layout">
+          <div class="contact-info">
+            <p><strong>Phone:</strong> +91 9496095055</p>
+            <p><strong>Email:</strong> weguideedusolution@gmail.com</p>
+            <p><strong>Address:</strong> kannuru, Bangalore, India</p>
+            <p>
+              <strong>WhatsApp:</strong>
+              <a href="https://wa.me/9496095055" target="_blank" rel="noopener">
+                Chat on WhatsApp
+              </a>
+            </p>
+            <p>
+              <strong>Instagram:</strong>
+              <a
+                href="https://www.instagram.com/weguide_edusolution.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener"
+              >
+                @weguide_edusolution.official
+              </a>
+            </p>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Tell us which course or college you are interested in"
+              required
+            ></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 WE GUIDE Education Consultancy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/9496095055?text=Hi%20I%20need%20admission%20guidance"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M12.04 2C6.61 2 2.2 6.39 2.2 11.8c0 1.91.55 3.78 1.6 5.38L2 22l4.96-1.75a9.89 9.89 0 0 0 5.08 1.39h.01c5.43 0 9.84-4.39 9.84-9.8S17.47 2 12.04 2Zm5.76 13.88c-.24.67-1.4 1.24-1.93 1.32-.49.07-1.11.1-1.8-.12-.42-.14-.95-.31-1.63-.6-2.87-1.23-4.74-4.09-4.88-4.28-.14-.19-1.16-1.54-1.16-2.94 0-1.39.73-2.07.99-2.35.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.17.01.4-.06.63.47.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.29.38-.41.5-.14.14-.29.29-.12.57.17.29.76 1.24 1.62 2.01 1.11.99 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.74-.86.94-1.16.19-.29.38-.24.64-.14.26.09 1.66.78 1.94.92.29.14.48.21.55.33.07.12.07.69-.17 1.36Z"
+          fill="currentColor"
+        />
+      </svg>
+    </a>
+    <a
+      class="instagram-float"
+      href="https://www.instagram.com/weguide_edusolution.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      target="_blank"
+      rel="noopener"
+      aria-label="Contact on Instagram"
+      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.1a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Z"
+          fill="currentColor"
+        />
+      </svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="colleges.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
